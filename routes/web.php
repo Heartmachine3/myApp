@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('prueba', function(){
+    return "Holamundo" +1;
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
