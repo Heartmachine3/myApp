@@ -18,6 +18,17 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->enum('type', [
+                'admin',
+                'user',
+                'coordinador_sedes',
+                'coordinador_general',
+                'jugador',
+                'arbitro',
+                'administracion_turistica',
+                'gastronomia',
+                'hoteleria' 
+                ])->default('user');
             $table->rememberToken();
             $table->timestamps();
         });
