@@ -21,13 +21,13 @@ class CreateUsersTable extends Migration
             $table->enum('type', [
                 'admin',
                 'user',
-                'coordinador_sedes',
-                'coordinador_general',
-                'jugador',
-                'arbitro',
-                'administracion_turistica',
-                'gastronomia',
-                'hoteleria' 
+                'venues_coordinator',
+                'general_coordinator',
+                'soccer_player ',
+                'referee',
+                'tourism',
+                'gastronomy',
+                'hotel' 
                 ])->default('user');
             $table->rememberToken();
             $table->timestamps();
