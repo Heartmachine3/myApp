@@ -1,4 +1,20 @@
-<!doctype html>
+@extends('layouts.base')
+
+@section('content')
+
+    <div class="container-fluid">
+        <h1 class="page-header" style="color: #636b6f " >Dashboard</h1>
+        @guest
+        <h5 style="color: #636b6f" >Bienvenido :)</h5>
+        @else
+        <h5 style="color: #636b6f" >Bienvenido: {{ Auth::user()->name }}</h5>
+        @endguest
+    </div>
+
+@stop
+
+
+{{-- <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="utf-8">
@@ -92,4 +108,4 @@
             </div>
         </div>
     </body>
-</html>
+</html> --}}
