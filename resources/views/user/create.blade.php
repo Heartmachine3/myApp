@@ -3,7 +3,7 @@
 @section('content')
     <br>
     <div class="container-fluid">
-        <h3 style="color:#585858">Crear Usuarios</h3>
+        <h3 style="color:#585858">Crear Usuario</h3>
         <div class="padding-md">
             <form method="POST" action="{{ route('register') }}">
                 @csrf
@@ -18,7 +18,7 @@
                     <div class="form-group row">
 
                         <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                            <label for="id_nombres" style="color:#585858">Nombre</label>
+                            <label for="id_nombres" style="color:#585858">Nombre de Usuario</label>
                             <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
                             @if ($errors->has('name'))
                             <span class="invalid-feedback">
@@ -52,6 +52,7 @@
                             <label for="password-confirm" style="color:#585858">Confirmar Contraseña</label>
                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                         </div>
+
                     </div>
                 </div>                    
             </form>

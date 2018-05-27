@@ -112,7 +112,7 @@
                             </a>
                         </li> --}}
         
-                        <li  data-toggle="collapse" data-target="#products" class="collapsed active">
+                        {{-- <li  data-toggle="collapse" data-target="#products" class="collapsed active">
                             <a href="#"><i class="fa fa-gift fa-lg"></i> ADMINISTRACION <span class="arrow"></span></a>
                         </li>
                         <ul class="sub-menu collapse" id="products">
@@ -126,42 +126,24 @@
                             <li><a href="#">Panels</a></li>
                             <li><a href="#">Widgets</a></li>
                             <li><a href="#">Bootstrap Model</a></li>
-                        </ul>
+                        </ul> --}}
           
-          
-                          {{-- <li data-toggle="collapse" data-target="#service" class="collapsed">
-                            <a href="#"><i class="fa fa-globe fa-lg"></i> Services <span class="arrow"></span></a>
-                          </li>  
-                          <ul class="sub-menu collapse" id="service">
-                            <li>New Service 1</li>
-                            <li>New Service 2</li>
-                            <li>New Service 3</li>
-                          </ul> --}}
-          
-          
-                          {{-- <li data-toggle="collapse" data-target="#new" class="collapsed">
-                            <a href="#"><i class="fa fa-car fa-lg"></i> New <span class="arrow"></span></a>
-                          </li>
-                          <ul class="sub-menu collapse" id="new">
-                            <li>New New 1</li>
-                            <li>New New 2</li>
-                            <li>New New 3</li>
-                          </ul> --}}
-          
-          
-                           {{-- <li>
-                            <a href="#">
-                            <i class="fa fa-user fa-lg"></i> Profile
-                            </a>
-                            </li> --}}
-          
-                        <li data-toggle="collapse" data-target="#user" class="collapsed">
+                        <li data-toggle="collapse" data-target="#user" class="collapsed active">
                             <a href="#"><i class="fa fa-user fa-lg"></i> USUARIOS <span class="arrow"></span></a>
                         </li>
                         <ul class="sub-menu collapse" id="user">
                             <li style="display:block"><a href="{{ route('user.create') }}">CREAR</a></li>
                             <li style="display:block"><a href="" >CONSULTAR</a></li>
                         </ul>
+
+                        <li data-toggle="collapse" data-target="#jugadores" class="collapsed">
+                            <a href="#"><i class="fa fa-futbol-o"></i> JUGADORES <span class="arrow"></span></a>
+                        </li>
+                            <ul class="sub-menu collapse" id="jugadores">
+                            <li style="display:block"><a href="{{ route('jugadores.create') }}">CREAR</a></li>
+                            <li style="display:block"><a href="" >CONSULTAR</a></li>
+                        </ul>
+
                     </ul>
                 </div>
             </div>
