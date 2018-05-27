@@ -8,7 +8,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" />
+    <title>{{ config('app.name', 'Laravel') }} </title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -71,6 +72,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     @guest
                     <li><a class="nav-link" href="{{ route('login') }}">{{ __('Ingreso') }}</a></li>
+                    <li><a class="nav-link" href="{{ route('register') }}">{{ __('Registro') }}</a></li>
                     @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -169,12 +171,12 @@
             </div>
 
             <footer class="footer">
-                  <span class="footer-brand">
-                      <strong class="text-danger">Core</strong> App
-                  </span>
-                  <p class="no-margin">
-                      © 2015 <strong>Siesa</strong>. ALL Rights Reserved.
-                  </p>
+
+                <span class="footer-brand">
+                    <strong style="color:#DB3149">Russia</strong> 2018
+                </span>
+                <p class="no-margin"> © 2018 <strong>Heart Machine </strong>. ALL Rights Reserved.</p>
+                <img style="float:right" src="{{ asset('img/heart-machine-logo.png') }}" alt="heart-machine-logo" width="25" height="25">
             </footer>
         </div>
     </div>

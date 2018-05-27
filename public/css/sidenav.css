@@ -153,10 +153,12 @@
   .footer .footer-brand {
     font-size: 18px;
     margin-right: 20px;
-    }
+  }
+
   .footer p {
     display: inline-block;
-    }
+  }
+  
   .footer{
     display: block;
     z-index: 900;
@@ -178,3 +180,4 @@
     -moz-transition: left .5s ease;
     -ms-transition: left .5s ease;
     -o-transition: left .5s ease;
+  }

@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="container-fluid">
-        <h1 class="page-header" style="color: #636b6f " >Dashboard</h1>
+        <h3 class="page-header" style="color: #585858 " >Dashboard</h3>
         @guest
         <h5 style="color: #636b6f" >Bienvenido :)</h5>
         @else
