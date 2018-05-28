@@ -147,6 +147,9 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class, #Laravel Provider New
+        Laracasts\Flash\FlashServiceProvider::class, #New Messages
+        UxWeb\SweetAlert\SweetAlertServiceProvider::class,
+        // odannyc\Alertify\AlertifyServiceProvider::class, #New
 
         /*
          * Package Service Providers...
@@ -211,6 +214,9 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class, #New
         'Html' => Collective\Html\HtmlFacade::class, #New
+        'Alert' => UxWeb\SweetAlert\SweetAlert::class,
+        // 'Flash' => Laracasts\Flash\Flash::class, #New
+        // 'Alertify' => odannyc\Alertify\Alertify::class, #New
 
     ],
 

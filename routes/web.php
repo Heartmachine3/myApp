@@ -25,4 +25,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 #Route Users
 Route::resource('user', 'UserController');
+
 Route::resource('jugadores', 'JugadoresController');
+Route::get('jugadores/{id}/destroy', [
+    'uses' => 'JugadoresController@destroy',
+    'as' => 'jugadores.destroy'
+]);

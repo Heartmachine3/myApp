@@ -4,9 +4,10 @@
 <br>
 <div class="container-fluid">
     <h3 style="color:#585858">@yield('title', 'Default')</h3>
+    <h4 style="color:#585858">@yield('title_name', 'Default')</h4>
     <div class="padding-md">
 
-        @yield('createform')
+        @yield('editform')
 
         <div>
             <ul class="nav nav-tabs">
@@ -14,7 +15,7 @@
             </ul> <br>
             <div class="from-group">
 
-                @yield('createview')
+                @yield('editview')
 
             </div>
         </div>

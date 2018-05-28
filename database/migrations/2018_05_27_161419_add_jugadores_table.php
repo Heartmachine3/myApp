@@ -13,10 +13,11 @@ class AddJugadoresTable extends Migration
      */
     public function up()
     {
-        Schema::create('jugadores', function (Blueprint $table) {
+        Schema::create('tb_jugadores', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('first_name');
-            $table->string('last_name');
+            $table->string('nombres');
+            $table->string('apellidos');
+            $table->string('equipo');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class AddJugadoresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jugadores');
+        Schema::dropIfExists('tb_jugadores');
     }
 }

@@ -13,6 +13,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://cdn.rawgit.com/alertifyjs/alertify.js/v1.0.10/dist/js/alertify.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -141,7 +142,7 @@
                         </li>
                             <ul class="sub-menu collapse" id="jugadores">
                             <li style="display:block"><a href="{{ route('jugadores.create') }}">CREAR</a></li>
-                            <li style="display:block"><a href="" >CONSULTAR</a></li>
+                            <li style="display:block"><a href="{{ route('jugadores.index') }}" >CONSULTAR</a></li>
                         </ul>
 
                     </ul>
@@ -165,6 +166,7 @@
 
     {{-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> --}}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </body>
 </html>

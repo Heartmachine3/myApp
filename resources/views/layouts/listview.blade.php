@@ -5,22 +5,22 @@
 <div class="container-fluid">
     <h3 style="color:#585858">@yield('title', 'Default')</h3>
     <div class="padding-md">
-
-        @yield('createform')
+        
+        @yield('searchdef')
 
         <div>
             <ul class="nav nav-tabs">
-                <li role="presentation" class="active"><a href="#">Datos Basicos</a></li> 
+                <li role="presentation" class="active"><a href="#">Busqueda Basica</a></li> 
             </ul> <br>
-            <div class="from-group">
+            <div class="table-responsive">
 
-                @yield('createview')
-
+                @yield('listview')
+                
             </div>
         </div>
-
-        {!! Form::close() !!}
     </div>
 </div>
+
+{{--  @include('sweet::alert')  --}}
 
 @stop
