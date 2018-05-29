@@ -115,11 +115,19 @@
                         </ul>
 
                         <li data-toggle="collapse" data-target="#empresas" class="collapsed">
-                            <a href="#"><i class="fa fa-cubes"></i> Empresas <span class="arrow"></span></a>
+                            <a href="#"><i class="fa fa-briefcase"></i> Empresas <span class="arrow"></span></a>
                         </li>
                             <ul class="sub-menu collapse" id="empresas">
                             <li style="display:block"><a href="{{ route('empresas.create') }}">CREAR</a></li>
                             <li style="display:block"><a href="{{ route('empresas.index') }}" >CONSULTAR</a></li>
+                        </ul>
+
+                        <li data-toggle="collapse" data-target="#sucursales" class="collapsed">
+                            <a href="#"><i class="fa fa-cubes"></i> Sucursales <span class="arrow"></span></a>
+                        </li>
+                            <ul class="sub-menu collapse" id="sucursales">
+                            <li style="display:block"><a href="{{ route('sucursales.create') }}">CREAR</a></li>
+                            <li style="display:block"><a href="{{ route('sucursales.index') }}" >CONSULTAR</a></li>
                         </ul>
 
                     </ul>

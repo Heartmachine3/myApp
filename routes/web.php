@@ -53,3 +53,10 @@ Route::get('empresas/{id}/destroy', [
     'as' => 'empresas.destroy'
 ]);
 
+#Route Sucursales
+Route::resource('sucursales', 'SucursalesController');
+Route::get('sucursales/{id}/destroy', [
+    'uses' => 'SucursalesController@destroy',
+    'as' => 'sucursales.destroy'
+]);
+
