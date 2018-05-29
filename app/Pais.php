@@ -7,6 +7,10 @@ use myApp\Ciudad;
 
 class Pais extends Model
 {
+    public $incrementing = false;
+
+    protected  $primaryKey = 'PaisCodigo';
+
     protected $fillable = [
         'PaisCodigo',
         'PaisNombre',

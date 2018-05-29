@@ -3,10 +3,9 @@
 namespace myApp\Http\Controllers;
 
 use Illuminate\Http\Request;
-use myApp\Jugador;
-use Flash;
+use myApp\Ciudad;
 
-class JugadoresController extends Controller
+class CiudadesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,8 @@ class JugadoresController extends Controller
      */
     public function index()
     {
-        $jugadores = Jugador::orderBy('id','ASC')->paginate(8);
-        return view('jugadores.index')->with('jugadores', $jugadores);
+        $ciudades = Ciudad::orderBy('id','ASC')->paginate(8);
+        return view('ciudades.index')->with('ciudades', $ciudades);
     }
 
     /**
@@ -26,7 +25,7 @@ class JugadoresController extends Controller
      */
     public function create()
     {
-        return view('jugadores.create');
+        return view('ciudades.create');
     }
 
     /**
@@ -37,9 +36,10 @@ class JugadoresController extends Controller
      */
     public function store(Request $request)
     {
-        $jugador = new Jugador($request->all());
-        $jugador->save();
-        return redirect()->route('jugadores.index');
+        $ciudad = new Ciudad($request->all());
+        $ciudad->PaisCodigo = $request->PaisCodigo;
+        $ciudad->save();
+        return redirect()->route('ciudades.index');
     }
 
     /**
@@ -49,9 +49,9 @@ class JugadoresController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {   
-        $jugador = Jugador::find($id);
-        return view('jugadores.detailview')->with('jugador', $jugador);
+    {
+        $ciudad = Ciudad::find($id);
+        return view('ciudades.detailview')->with('ciudad', $ciudad);
     }
 
     /**
@@ -62,8 +62,8 @@ class JugadoresController extends Controller
      */
     public function edit($id)
     {
-        $jugador = Jugador::find($id);
-        return view('jugadores.editview')->with('jugador', $jugador);
+        $ciudad = Ciudad::find($id);
+        return view('ciudades.editview')->with('ciudad', $ciudad);
     }
 
     /**
@@ -75,12 +75,11 @@ class JugadoresController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $jugador = Jugador::find($id);
-        $jugador->nombres = $request->nombres;
-        $jugador->apellidos = $request->apellidos;
-        $jugador->apellidos = $request->apellidos;
-        $jugador->save();
-        return redirect()->route('jugadores.show', $jugador->id);
+        $ciudad = Ciudad::find($id);
+        $ciudad->CiudadNombre = $request->CiudadNombre;
+        $ciudad->PaisCodigo = $request->PaisCodigo;
+        $ciudad->save();
+        return redirect()->route('ciudades.show', $ciudad->id);
     }
 
     /**
@@ -91,8 +90,8 @@ class JugadoresController extends Controller
      */
     public function destroy($id)
     {
-        $jugador = Jugador::find($id);
-        $jugador->delete();
-        return redirect()->route('jugadores.index');
+        $ciudad = Ciudad::find($id);
+        $ciudad->delete();
+        return redirect()->route('ciudades.index');
     }
 }

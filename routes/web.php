@@ -31,3 +31,18 @@ Route::get('jugadores/{id}/destroy', [
     'uses' => 'JugadoresController@destroy',
     'as' => 'jugadores.destroy'
 ]);
+
+#Route Paises
+Route::resource('paises', 'PaisesController');
+Route::get('paises/{PaisCodigo}/destroy', [
+    'uses' => 'paisesController@destroy',
+    'as' => 'paises.destroy'
+]);
+
+#Route Ciudades
+Route::resource('ciudades', 'CiudadesController');
+Route::get('paises/{PaisCodigo}/destroy', [
+    'uses' => 'paisesController@destroy',
+    'as' => 'paises.destroy'
+]);
+

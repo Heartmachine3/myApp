@@ -3,10 +3,10 @@
 namespace myApp\Http\Controllers;
 
 use Illuminate\Http\Request;
-use myApp\Jugador;
+use myApp\Pais;
 use Flash;
 
-class JugadoresController extends Controller
+class PaisesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class JugadoresController extends Controller
      */
     public function index()
     {
-        $jugadores = Jugador::orderBy('id','ASC')->paginate(8);
-        return view('jugadores.index')->with('jugadores', $jugadores);
+        $paises = Pais::orderBy('PaisNombre','ASC')->paginate(8);
+        return view('paises.index')->with('paises', $paises);
     }
 
     /**
@@ -26,7 +26,7 @@ class JugadoresController extends Controller
      */
     public function create()
     {
-        return view('jugadores.create');
+        return view('paises.create');
     }
 
     /**
@@ -37,9 +37,9 @@ class JugadoresController extends Controller
      */
     public function store(Request $request)
     {
-        $jugador = new Jugador($request->all());
-        $jugador->save();
-        return redirect()->route('jugadores.index');
+        $pais = new Pais($request->all());
+        $pais->save();
+        return redirect()->route('paises.show', $pais->PaisCodigo);
     }
 
     /**
@@ -48,10 +48,10 @@ class JugadoresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {   
-        $jugador = Jugador::find($id);
-        return view('jugadores.detailview')->with('jugador', $jugador);
+    public function show($PaisCodigo)
+    {
+        $pais = Pais::find($PaisCodigo);
+        return view('paises.detailview')->with('pais', $pais);
     }
 
     /**
@@ -60,10 +60,10 @@ class JugadoresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($PaisCodigo)
     {
-        $jugador = Jugador::find($id);
-        return view('jugadores.editview')->with('jugador', $jugador);
+        $pais = Pais::find($PaisCodigo);
+        return view('paises.editview')->with('pais', $pais);
     }
 
     /**
@@ -73,14 +73,13 @@ class JugadoresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $PaisCodigo)
     {
-        $jugador = Jugador::find($id);
-        $jugador->nombres = $request->nombres;
-        $jugador->apellidos = $request->apellidos;
-        $jugador->apellidos = $request->apellidos;
-        $jugador->save();
-        return redirect()->route('jugadores.show', $jugador->id);
+        $pais = Pais::find($PaisCodigo);
+        $pais->PaisCodigo = $request->PaisCodigo;
+        $pais->PaisNombre = $request->PaisNombre;
+        $pais->save();
+        return redirect()->route('paises.show', $pais->PaisCodigo);
     }
 
     /**
@@ -89,10 +88,10 @@ class JugadoresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($PaisCodigo)
     {
-        $jugador = Jugador::find($id);
-        $jugador->delete();
-        return redirect()->route('jugadores.index');
+        $pais = Pais::find($PaisCodigo);
+        $pais->delete();
+        return redirect()->route('paises.index');
     }
 }

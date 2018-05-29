@@ -7,7 +7,9 @@ use myApp\Pais;
 
 class Ciudad extends Model
 {
-    protected $fuillable = ['CiudadNombre, PaisCodigo, CiudadDistrito, CiudadPoblacion'];
+    protected $guarded = array();
+
+    protected $fuillable = ['CiudadNombre, PaisCodigo, CiudadDistrito, CiudadPoblacion, _token'];
 
     public function pais()
     {
