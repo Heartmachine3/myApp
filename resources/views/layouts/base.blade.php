@@ -154,6 +154,14 @@
                             <li style="display:block"><a href="{{ route('arbitros.index') }}" >CONSULTAR</a></li>
                         </ul>
 
+                        <li data-toggle="collapse" data-target="#selecciones" class="collapsed">
+                            <a href="#"><i class="fa fa-book"></i> SELECCIONES <span class="arrow"></span></a>
+                        </li>
+                            <ul class="sub-menu collapse" id="selecciones">
+                            <li style="display:block"><a href="{{ route('selecciones.create') }}">CREAR</a></li>
+                            <li style="display:block"><a href="{{ route('selecciones.index') }}" >CONSULTAR</a></li>
+                        </ul>
+
                     </ul>
                 </div>
             </div>

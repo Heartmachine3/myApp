@@ -81,3 +81,10 @@ Route::get('arbitros/{id}/destroy', [
     'as' => 'arbitros.destroy'
 ]);
 
+#Route Seleccion
+Route::resource('selecciones', 'SeleccionesController');
+Route::get('selecciones/{id}/destroy', [
+    'uses' => 'SeleccionesController@destroy',
+    'as' => 'selecciones.destroy'
+]);
+
