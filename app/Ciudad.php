@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use myApp\Pais;
 use myApp\Empresa;
 use myApp\Sucursal;
+use myApp\Sede;
 
 class Ciudad extends Model
 {
@@ -26,6 +27,11 @@ class Ciudad extends Model
     public function sucursal()
     {
         return $this ->hasMany(Sucursal);
+    }
+
+    public function sede()
+    {
+        return $this ->hasMany(Sede);
     }
 
     protected $table = 'tb_ciudades';

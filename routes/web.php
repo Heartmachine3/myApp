@@ -67,3 +67,10 @@ Route::get('empleados/{id}/destroy', [
     'as' => 'empleados.destroy'
 ]);
 
+#Route Sedes
+Route::resource('sedes', 'SedesController');
+Route::get('sedes/{id}/destroy', [
+    'uses' => 'SedesController@destroy',
+    'as' => 'sedes.destroy'
+]);
+

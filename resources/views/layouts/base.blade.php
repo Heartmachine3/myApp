@@ -115,7 +115,7 @@
                         </ul>
 
                         <li data-toggle="collapse" data-target="#empresas" class="collapsed">
-                            <a href="#"><i class="fa fa-briefcase"></i> Empresas <span class="arrow"></span></a>
+                            <a href="#"><i class="fa fa-briefcase"></i> EMPRESAS <span class="arrow"></span></a>
                         </li>
                             <ul class="sub-menu collapse" id="empresas">
                             <li style="display:block"><a href="{{ route('empresas.create') }}">CREAR</a></li>
@@ -123,7 +123,7 @@
                         </ul>
 
                         <li data-toggle="collapse" data-target="#sucursales" class="collapsed">
-                            <a href="#"><i class="fa fa-cubes"></i> Sucursales <span class="arrow"></span></a>
+                            <a href="#"><i class="fa fa-cubes"></i> SUCURSALES <span class="arrow"></span></a>
                         </li>
                             <ul class="sub-menu collapse" id="sucursales">
                             <li style="display:block"><a href="{{ route('sucursales.create') }}">CREAR</a></li>
@@ -131,11 +131,19 @@
                         </ul>
 
                         <li data-toggle="collapse" data-target="#empleados" class="collapsed">
-                            <a href="#"><i class="fa fa-odnoklassniki"></i> Empleados <span class="arrow"></span></a>
+                            <a href="#"><i class="fa fa-odnoklassniki"></i> EMPLEADOS <span class="arrow"></span></a>
                         </li>
                             <ul class="sub-menu collapse" id="empleados">
                             <li style="display:block"><a href="{{ route('empleados.create') }}">CREAR</a></li>
                             <li style="display:block"><a href="{{ route('empleados.index') }}" >CONSULTAR</a></li>
+                        </ul>
+
+                        <li data-toggle="collapse" data-target="#sedes" class="collapsed">
+                            <a href="#"><i class="fa fa-cube"></i> SEDES <span class="arrow"></span></a>
+                        </li>
+                            <ul class="sub-menu collapse" id="sedes">
+                            <li style="display:block"><a href="{{ route('sedes.create') }}">CREAR</a></li>
+                            <li style="display:block"><a href="{{ route('sedes.index') }}" >CONSULTAR</a></li>
                         </ul>
 
                     </ul>
