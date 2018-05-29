@@ -130,6 +130,14 @@
                             <li style="display:block"><a href="{{ route('sucursales.index') }}" >CONSULTAR</a></li>
                         </ul>
 
+                        <li data-toggle="collapse" data-target="#empleados" class="collapsed">
+                            <a href="#"><i class="fa fa-odnoklassniki"></i> Empleados <span class="arrow"></span></a>
+                        </li>
+                            <ul class="sub-menu collapse" id="empleados">
+                            <li style="display:block"><a href="{{ route('empleados.create') }}">CREAR</a></li>
+                            <li style="display:block"><a href="{{ route('empleados.index') }}" >CONSULTAR</a></li>
+                        </ul>
+
                     </ul>
                 </div>
             </div>

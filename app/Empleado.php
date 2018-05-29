@@ -1,7 +1,7 @@
 <?php
 
 namespace myApp;
-use myApp\Ciudad;
+use myApp\Sucursal;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,12 +9,12 @@ class Empleado extends Model
 {
     protected $guarded = array();
 
-    protected $fuillable = ['nit, razon_social, nombre_negocio, ciudad_id, telefono, direccion'];
+    protected $fuillable = ['identificacion, nombres, apellidos, telefono, cargo, sucursal_id'];
 
-    public function ciudad()
+    public function sucursal()
     {
-        return $this -> belongsTo(Ciudad);
+        return $this -> belongsTo(Sucursal);
     }
 
-    protected $table = 'tb_empresas';
+    protected $table = 'tb_empleados';
 }

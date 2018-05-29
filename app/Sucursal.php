@@ -5,6 +5,7 @@ namespace myApp;
 use Illuminate\Database\Eloquent\Model;
 use myApp\Ciudad;
 use myApp\Empresa;
+use myApp\Empleado;
 
 class Sucursal extends Model
 {
@@ -20,6 +21,11 @@ class Sucursal extends Model
     public function empresa()
     {
         return $this -> belongsTo(Empresa);
+    }
+
+    public function empleado()
+    {
+        return $this ->hasMany(Empleado);
     }
 
     protected $table = 'tb_sucursales';

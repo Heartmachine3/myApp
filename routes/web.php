@@ -60,3 +60,10 @@ Route::get('sucursales/{id}/destroy', [
     'as' => 'sucursales.destroy'
 ]);
 
+#Route Empleados
+Route::resource('empleados', 'EmpleadosController');
+Route::get('empleados/{id}/destroy', [
+    'uses' => 'EmpleadosController@destroy',
+    'as' => 'empleados.destroy'
+]);
+
