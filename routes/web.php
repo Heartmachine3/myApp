@@ -41,8 +41,15 @@ Route::get('paises/{PaisCodigo}/destroy', [
 
 #Route Ciudades
 Route::resource('ciudades', 'CiudadesController');
-Route::get('paises/{PaisCodigo}/destroy', [
-    'uses' => 'paisesController@destroy',
-    'as' => 'paises.destroy'
+Route::get('paises/{id}/destroy', [
+    'uses' => 'CiudadesController@destroy',
+    'as' => 'ciudades.destroy'
+]);
+
+#Route Empresas
+Route::resource('empresas', 'EmpresasController');
+Route::get('empresas/{id}/destroy', [
+    'uses' => 'EmpresasController@destroy',
+    'as' => 'empresas.destroy'
 ]);
 

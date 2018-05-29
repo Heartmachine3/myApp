@@ -4,6 +4,7 @@ namespace myApp;
 
 use Illuminate\Database\Eloquent\Model;
 use myApp\Pais;
+use myApp\Empresa;
 
 class Ciudad extends Model
 {
@@ -14,6 +15,11 @@ class Ciudad extends Model
     public function pais()
     {
         return $this -> belongsTo(Pais);
+    }
+
+    public function empresas()
+    {
+        return $this ->hasMany(Empresa);
     }
 
     protected $table = 'tb_ciudades';
