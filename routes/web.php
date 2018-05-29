@@ -74,3 +74,10 @@ Route::get('sedes/{id}/destroy', [
     'as' => 'sedes.destroy'
 ]);
 
+#Route Arbitros
+Route::resource('arbitros', 'ArbitrosController');
+Route::get('arbitros/{id}/destroy', [
+    'uses' => 'ArbitrosController@destroy',
+    'as' => 'arbitros.destroy'
+]);
+

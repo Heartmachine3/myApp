@@ -146,6 +146,14 @@
                             <li style="display:block"><a href="{{ route('sedes.index') }}" >CONSULTAR</a></li>
                         </ul>
 
+                        <li data-toggle="collapse" data-target="#arbitros" class="collapsed">
+                            <a href="#"><i class="fa fa-money"></i> ARBITROS <span class="arrow"></span></a>
+                        </li>
+                            <ul class="sub-menu collapse" id="arbitros">
+                            <li style="display:block"><a href="{{ route('arbitros.create') }}">CREAR</a></li>
+                            <li style="display:block"><a href="{{ route('arbitros.index') }}" >CONSULTAR</a></li>
+                        </ul>
+
                     </ul>
                 </div>
             </div>
