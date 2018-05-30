@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Jugador extends Model
 {   
-    protected $fillable =  ['nombres', 'apellidos', 'equipo', ''];
+    protected $guarded = array();
+
+    protected $fillable =  ['nombres', 'apellidos', 'equipo', 'seleccion_id'];
 
     protected $table = 'tb_jugadores';
 }

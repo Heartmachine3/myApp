@@ -79,6 +79,7 @@ class JugadoresController extends Controller
         $jugador->nombres = $request->nombres;
         $jugador->apellidos = $request->apellidos;
         $jugador->apellidos = $request->apellidos;
+        $jugador->seleccion_id = $request->seleccion_id;
         $jugador->save();
         return redirect()->route('jugadores.show', $jugador->id);
     }

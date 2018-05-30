@@ -12,6 +12,10 @@
     @endsection
 
     @section('detailview')
+
+    <?php
+    $seleccion = \DB::table('tb_selecciones')->where('id', $jugador->seleccion_id)->value('nombre');
+    ?>
     
     <div class="form-group col-md-6 col-sm-6 col-xs-12">
         {!! Form::label('nombres', 'Nombres', ['style' => 'color:#585858']) !!}
@@ -24,8 +28,8 @@
     </div>
 
     <div class="form-group col-md-6 col-sm-6 col-xs-12">
-        {!! Form::label('equipo', 'Equipo', ['style' => 'color:#585858']) !!}
-        <p style="word-wrap: break-word">{{$jugador->equipo}}</p>
+        {!! Form::label('seleccion', 'Seleccion', ['style' => 'color:#585858']) !!}
+        <p style="word-wrap: break-word">{{$seleccion}}</p>
     </div>
 
     @endsection
