@@ -12,9 +12,16 @@ class EmpleadosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $empleados = Empleado::orderBy('nombres','ASC')->paginate(8);
+        // $empleados = Empleado::orderBy('nombres','ASC')->paginate(7);
+
+        $empleados = Empleado::where(function($query) use ($request){
+            if ($term = $request->get('term')){
+                $query->where('nombres', 'like' , '%' . $term . '%' );
+            }
+        })->orderBy('nombres','ASC')->paginate(7);
+
         return view('empleados.index')->with('empleados', $empleados);
     }
 

@@ -12,9 +12,16 @@ class SeleccionesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $selecciones = Seleccion::orderBy('nombre','ASC')->paginate(8);
+        // $selecciones = Seleccion::orderBy('nombre','ASC')->paginate(7);
+
+        $selecciones = Seleccion::where(function($query) use ($request){
+            if ($term = $request->get('term')){
+                $query->where('nombre', 'like' , '%' . $term . '%' );
+            }
+        })->orderBy('nombre','ASC')->paginate(7);
+
         return view('selecciones.index')->with('selecciones', $selecciones);
     }
 

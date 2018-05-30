@@ -12,9 +12,16 @@ class SedesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $sedes = Sede::orderBy('nombre','ASC')->paginate(8);
+        // $sedes = Sede::orderBy('nombre','ASC')->paginate(7);
+
+        $sedes = Sede::where(function($query) use ($request){
+            if ($term = $request->get('term')){
+                $query->where('nombre', 'like' , '%' . $term . '%' );
+            }
+        })->orderBy('nombre','ASC')->paginate(7);
+
         return view('sedes.index')->with('sedes', $sedes);
     }
 

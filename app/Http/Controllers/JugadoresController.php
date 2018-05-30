@@ -13,9 +13,16 @@ class JugadoresController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $jugadores = Jugador::orderBy('id','ASC')->paginate(8);
+        // $jugadores = Jugador::orderBy('id','ASC')->paginate(7);
+
+        $jugadores = Jugador::where(function($query) use ($request){
+            if ($term = $request->get('term')){
+                $query->where('nombres', 'like' , '%' . $term . '%' );
+            }
+        })->orderBy('nombres','ASC')->paginate(7);
+        
         return view('jugadores.index')->with('jugadores', $jugadores);
     }
 

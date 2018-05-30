@@ -12,9 +12,16 @@ class CiudadesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $ciudades = Ciudad::orderBy('id','ASC')->paginate(8);
+        // $ciudades = Ciudad::orderBy('id','ASC')->paginate(7);
+
+        $ciudades = Ciudad::where(function($query) use ($request){
+            if ($term = $request->get('term')){
+                $query->where('CiudadNombre', 'like' , '%' . $term . '%' );
+            }
+        })->orderBy('id','ASC')->paginate(7);
+
         return view('ciudades.index')->with('ciudades', $ciudades);
     }
 

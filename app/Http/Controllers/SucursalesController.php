@@ -12,9 +12,16 @@ class SucursalesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $sucursales = Sucursal::orderBy('nombre','ASC')->paginate(8);
+        // $sucursales = Sucursal::orderBy('nombre','ASC')->paginate(7);
+
+        $sucursales = Sucursal::where(function($query) use ($request){
+            if ($term = $request->get('term')){
+                $query->where('nombre', 'like' , '%' . $term . '%' );
+            }
+        })->orderBy('nombre','ASC')->paginate(7);
+
         return view('sucursales.index')->with('sucursales', $sucursales);
     }
 

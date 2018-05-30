@@ -12,9 +12,16 @@ class ArbitrosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $arbitros = Arbitro::orderBy('nombres','ASC')->paginate(8);
+        // $arbitros = Arbitro::orderBy('nombres','ASC')->paginate(7);
+
+        $arbitros = Arbitro::where(function($query) use ($request){
+            if ($term = $request->get('term')){
+                $query->where('nombres', 'like' , '%' . $term . '%' );
+            }
+        })->orderBy('id','ASC')->paginate(7);
+
         return view('arbitros.index')->with('arbitros', $arbitros);
     }
 

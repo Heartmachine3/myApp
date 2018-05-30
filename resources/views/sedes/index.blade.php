@@ -4,7 +4,14 @@
 
     @section('listview')
 
-
+    {!! Form::open(['route' => 'sedes.index', 'method' => 'GET', 'class' => 'navbar-form navbar-right' , 'role' => 'search'] ) !!}
+    <div class="input-group">
+        {!! Form::text('term', Request::get('term'), ['class' => 'form-control', 'placeholder' => 'Ingrese Nombre...']) !!}
+        <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
+        </span>
+    </div>
+    {!! Form::close() !!}
     
         <table class="table table-hover">
             <thead>

@@ -53,6 +53,11 @@
                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                         </div>
 
+                        {{-- <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            {!! Form::label('seleccion_id', 'Seleccion', ['style' => 'color:#585858']) !!}
+                            {!! Form::select('seleccion_id', Config::get('enums.role');, null, ['class' => 'form-control' , 'required'])!!}
+                        </div> --}}
+
                     </div>
                 </div>                    
             </form>

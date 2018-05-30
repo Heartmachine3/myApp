@@ -13,9 +13,16 @@ class PaisesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $paises = Pais::orderBy('PaisNombre','ASC')->paginate(8);
+        // $paises = Pais::orderBy('PaisNombre','ASC')->paginate(7);
+
+        $paises = Pais::where(function($query) use ($request){
+            if ($term = $request->get('term')){
+                $query->where('PaisNombre', 'like' , '%' . $term . '%' );
+            }
+        })->orderBy('PaisNombre','ASC')->paginate(7);
+
         return view('paises.index')->with('paises', $paises);
     }
 

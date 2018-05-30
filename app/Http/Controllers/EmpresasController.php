@@ -12,9 +12,16 @@ class EmpresasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $empresas = Empresa::orderBy('razon_social','ASC')->paginate(8);
+        // $empresas = Empresa::orderBy('razon_social','ASC')->paginate(7);
+
+        $empresas = Empresa::where(function($query) use ($request){
+            if ($term = $request->get('term')){
+                $query->where('razon_social', 'like' , '%' . $term . '%' );
+            }
+        })->orderBy('razon_social','ASC')->paginate(7);
+
         return view('empresas.index')->with('empresas', $empresas);
     }
 

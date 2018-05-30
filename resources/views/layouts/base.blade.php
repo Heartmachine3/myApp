@@ -50,7 +50,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     @guest
                     <li><a class="nav-link" href="{{ route('login') }}">{{ __('Ingreso') }}</a></li>
-                    <li><a class="nav-link" href="{{ route('register') }}">{{ __('Registro') }}</a></li>
+                    {{-- <li><a class="nav-link" href="{{ route('register') }}">{{ __('Registro') }}</a></li> --}}
                     @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -160,6 +160,14 @@
                             <ul class="sub-menu collapse" id="selecciones">
                             <li style="display:block"><a href="{{ route('selecciones.create') }}">CREAR</a></li>
                             <li style="display:block"><a href="{{ route('selecciones.index') }}" >CONSULTAR</a></li>
+                        </ul>
+
+                        <li data-toggle="collapse" data-target="#programacion" class="collapsed">
+                            <a href="#"><i class="fa fa-anchor"></i> PPROGRAMACION <span class="arrow"></span></a>
+                        </li>
+                            <ul class="sub-menu collapse" id="programacion">
+                            <li style="display:block"><a href="{{ route('programaciones.create') }}">CREAR</a></li>
+                            <li style="display:block"><a href="{{ route('programaciones.index') }}" >CONSULTAR</a></li>
                         </ul>
 
                     </ul>
